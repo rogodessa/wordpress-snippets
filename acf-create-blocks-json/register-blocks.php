@@ -1,5 +1,8 @@
 <?php
 
+define('CUSTOM_THEME_DIRECTORY', get_stylesheet_directory() );
+define('CUSTOM_THEME_URL', get_stylesheet_directory_uri() );
+
 // load separate block asset
 add_filter ( 'should_load_separate_core_block_assets' , '__return_true' );
 
@@ -18,10 +21,10 @@ function register_acf_blocks() {
                     register_block_type( $blocks_directory . $block_dir );
 
                     if(file_exists($blocks_directory . $block_dir . '/scripts.js') && !is_admin()) {
-                        wp_register_script($block_data->name, LTU_THEME_URL . '/templates/blocks/' . $block_dir . '/scripts.js', [], $version, true);
+                        wp_register_script($block_data->name, CUSTOM_THEME_URL . '/templates/blocks/' . $block_dir . '/scripts.js', [], $version, true);
                     }
                     if(file_exists($blocks_directory . $block_dir . '/styles.css') && !is_admin()) {
-                        wp_register_style($block_data->name, LTU_THEME_URL . '/templates/blocks/' . $block_dir . '/styles.css', [], $version, 'all');
+                        wp_register_style($block_data->name, CUSTOM_THEME_URL . '/templates/blocks/' . $block_dir . '/styles.css', [], $version, 'all');
                     }
                 }
             }
