@@ -1,1 +1,51 @@
-
+{
+  "name": "product-gray-block",
+  "title": "Product gray block (text and image)",
+  "category": "theme",
+  "apiVersion": 2,
+  "keywords": [
+    "product",
+    "gray",
+    "image",
+    "text"
+  ],
+  "style": [
+    "app",
+    "wp-blocks",
+    "product-gray-block"
+  ],
+  "editorStyle": "file:./styles.css",
+  "script": [
+    "product-gray-block"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "./template.php",
+    "postTypes": [
+      "product"
+    ]
+  },
+  "styles": [
+    { "name": "default", "label": "Default", "isDefault": true },
+    { "name": "default_reverse", "label": "Default reverse" },
+    { "name": "small", "label": "Small" },
+    { "name": "small_reverse", "label": "Small reverse" }
+  ],
+  "supports": {
+    "color": {
+      "gradients": false
+    }
+  },
+  "attributes": {
+    "style": {
+      "type": "object",
+      "default": {
+        "color": {
+          "text": "#0E202A",
+          "background": "#E7E7E9",
+          "heading": "#E7E7E9"
+        }
+      }
+    }
+  }
+}
